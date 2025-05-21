@@ -14,6 +14,8 @@ import BookAppointment from './components/BookAppointment';
 import EmergencyPage from './pages/EmergencyPage';
 import AdminDashboard from './components/AdminDashboard';
 import PatientDashboard from './components/PatientDashboard';
+import OPDConsultationDetails from './components/OPDConsultationDetails';
+import EmergencyCareDetails from './components/EmergencyCareDetails';
 
 function App() {
   return (
@@ -51,6 +53,10 @@ function App() {
           {/* Dashboard Routes */}
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
           <Route path="/patient-dashboard" element={<PatientDashboard />} />
+
+          {/* services */}
+          <Route path="/services/opd" element={<OPDConsultationDetails />} />
+          <Route path="/services/emergency" element={<EmergencyCareDetails />} />
         </Routes>
       </main>
 
