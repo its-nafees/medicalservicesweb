@@ -16,6 +16,8 @@ import AdminDashboard from './components/AdminDashboard';
 import PatientDashboard from './components/PatientDashboard';
 import OPDConsultationDetails from './components/OPDConsultationDetails';
 import EmergencyCareDetails from './components/EmergencyCareDetails';
+import DiagnosticServices from './components/DiagnosticServices';
+
 
 function App() {
   return (
@@ -57,6 +59,7 @@ function App() {
           {/* services */}
           <Route path="/services/opd" element={<OPDConsultationDetails />} />
           <Route path="/services/emergency" element={<EmergencyCareDetails />} />
+           <Route path="/services/Diagnostic" element={<DiagnosticServices />} />
         </Routes>
       </main>
 
