@@ -17,6 +17,10 @@ import PatientDashboard from './components/PatientDashboard';
 import OPDConsultationDetails from './components/OPDConsultationDetails';
 import EmergencyCareDetails from './components/EmergencyCareDetails';
 import DiagnosticServices from './components/DiagnosticServices';
+import Vaccinations from './components/Vaccinations';
+import HealthCheckups from './components/HealthCheckups';
+import ViewProfile from './components/ViewProfile';
+
 
 
 function App() {
@@ -25,7 +29,7 @@ function App() {
       {/* Fixed Navigation */}
       <MainNavigation />
       <MedicalHeroCarousel />
-      
+
       {/* Main Content Area */}
       <main className="flex-grow pt-16">
         <Routes>
@@ -34,14 +38,14 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/health-tips" element={<HealthTipsPage />} />
-          
+
           {/* Emergency Route */}
           <Route path="/emergency" element={<EmergencyPage />} />
-          
+
           {/* Doctors Routes */}
           <Route path="/doctors" element={<OurDoctors />} />
           <Route path="/doctors/:id" element={<DoctorProfile />} />
-          
+
           {/* Appointments Routes */}
           <Route path="/appointments" element={<BookAppointment />} />
           <Route path="/appointments/:id" element={<BookAppointment />} />
@@ -59,7 +63,15 @@ function App() {
           {/* services */}
           <Route path="/services/opd" element={<OPDConsultationDetails />} />
           <Route path="/services/emergency" element={<EmergencyCareDetails />} />
-           <Route path="/services/Diagnostic" element={<DiagnosticServices />} />
+          <Route path="/service/Diagnostic" element={<DiagnosticServices />} />
+          <Route path="/services/diagnostics" element={<DiagnosticServices />} />
+          <Route path="/services/vaccinations" element={<Vaccinations />} />
+          <Route path="/services/checkups" element={<HealthCheckups />} />
+         
+          {/* doctors profile */}
+          <Route path="/doctor-profile" element={<ViewProfile />} />
+
+
         </Routes>
       </main>
 
