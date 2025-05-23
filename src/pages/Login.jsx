@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 
 const AUTH_CONFIG = {
   ADMIN_CREDENTIALS: {
-    email: 'admin@medicare.com',
-    password: 'SecureAdmin@123'
+    email: 'nafeesahmadf5253@gmail.com',
+    password: 'admin@12345'
   },
   PATIENT_DEFAULT_ROLE: 'patient'
 };
