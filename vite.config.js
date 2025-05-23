@@ -1,11 +1,9 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import svgr from 'vite-plugin-svgr';
+import svgr from 'vite-plugin-svgr'; // For SVG handling
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  base: '/medicalservicesweb/', // Essential for GitHub Pages
   plugins: [
     react({
       jsxImportSource: '@emotion/react',
@@ -13,7 +11,7 @@ export default defineConfig({
         plugins: ['@emotion/babel-plugin'],
       },
     }),
-    svgr(),
+    svgr(), // Add SVG support
   ],
   resolve: {
     alias: [
@@ -40,8 +38,9 @@ export default defineConfig({
     open: true,
     cors: true,
     proxy: {
+      // Example proxy configuration for external resources
       '/external-images': {
-        target: 'https://upload.wikimedia.org',
+        target: 'https://upload.wikimedia.org', // Example for Wikimedia images
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/external-images/, ''),
       },
@@ -57,16 +56,16 @@ export default defineConfig({
         chunkFileNames: 'js/[name]-[hash].js',
         entryFileNames: 'js/[name]-[hash].js',
       },
+      // Handle external resources
+      external: [
+        // Add any problematic external resources here
+      ],
     },
   },
   optimizeDeps: {
     include: ['react', 'react-dom'],
+    exclude: [], // Add any problematic dependencies here
   },
-  assetsInclude: [
-    '**/*.svg',
-    '**/*.png',
-    '**/*.jpg',
-    '**/*.jpeg',
-    '**/*.gif'
-  ],
+  // Add this to handle SVG and other assets
+  assetsInclude: ['**/*.svg', '**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif'],
 });

@@ -7,9 +7,9 @@ import { useForm } from 'react-hook-form';
 const ContactUs = () => {
   const [activeTab, setActiveTab] = useState('general');
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const {
-    register,
-    handleSubmit,
+  const { 
+    register, 
+    handleSubmit, 
     formState: { errors },
     reset
   } = useForm();
@@ -71,7 +71,7 @@ const ContactUs = () => {
               <FaUserMd className="mr-2 text-blue-500" />
               Send Us a Message
             </h2>
-
+            
             {isSubmitted ? (
               <motion.div
                 initial={{ scale: 0.9 }}
@@ -85,7 +85,7 @@ const ContactUs = () => {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-gray-700 mb-2">Full Name*</label>
-                    <input
+                    <input 
                       type="text"
                       {...register("name", { required: "Name is required" })}
                       className={`w-full p-3 border ${errors.name ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
@@ -95,9 +95,9 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <label className="block text-gray-700 mb-2">Phone*</label>
-                    <input
+                    <input 
                       type="tel"
-                      {...register("phone", {
+                      {...register("phone", { 
                         required: "Phone number is required",
                         pattern: {
                           value: /^[0-9]{10}$/,
@@ -113,9 +113,9 @@ const ContactUs = () => {
 
                 <div>
                   <label className="block text-gray-700 mb-2">Email*</label>
-                  <input
+                  <input 
                     type="email"
-                    {...register("email", {
+                    {...register("email", { 
                       required: "Email is required",
                       pattern: {
                         value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
@@ -147,7 +147,7 @@ const ContactUs = () => {
 
                 <div>
                   <label className="block text-gray-700 mb-2">Subject*</label>
-                  <select
+                  <select 
                     {...register("subject", { required: "Please select a subject" })}
                     className={`w-full p-3 border ${errors.subject ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
                   >
@@ -163,7 +163,7 @@ const ContactUs = () => {
 
                 <div>
                   <label className="block text-gray-700 mb-2">Message*</label>
-                  <textarea
+                  <textarea 
                     rows="5"
                     {...register("message", { required: "Message is required" })}
                     className={`w-full p-3 border ${errors.message ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
@@ -172,7 +172,7 @@ const ContactUs = () => {
                   {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>}
                 </div>
 
-                <motion.button
+                <motion.button 
                   type="submit"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -185,14 +185,14 @@ const ContactUs = () => {
           </motion.div>
 
           {/* Contact Info */}
-          <motion.div
+          <motion.div 
             initial="hidden"
             animate="visible"
             variants={slideUp}
             className="space-y-8"
           >
             {/* Emergency Card */}
-            <motion.div
+            <motion.div 
               whileHover={{ scale: 1.02 }}
               className="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg cursor-pointer"
             >
@@ -212,7 +212,7 @@ const ContactUs = () => {
 
             {/* Contact Cards */}
             <div className="space-y-6">
-              <motion.div
+              <motion.div 
                 whileHover={{ y: -2 }}
                 className="bg-white p-6 rounded-lg shadow-sm border border-gray-100"
               >
@@ -226,7 +226,7 @@ const ContactUs = () => {
                 </div>
               </motion.div>
 
-              <motion.div
+              <motion.div 
                 whileHover={{ y: -2 }}
                 className="bg-white p-6 rounded-lg shadow-sm border border-gray-100"
               >
@@ -246,7 +246,7 @@ const ContactUs = () => {
                 </div>
               </motion.div>
 
-              <motion.div
+              <motion.div 
                 whileHover={{ y: -2 }}
                 className="bg-white p-6 rounded-lg shadow-sm border border-gray-100"
               >
@@ -276,7 +276,7 @@ const ContactUs = () => {
         </div>
 
         {/* Map Section */}
-        <motion.div
+        <motion.div 
           initial="hidden"
           animate="visible"
           variants={slideUp}

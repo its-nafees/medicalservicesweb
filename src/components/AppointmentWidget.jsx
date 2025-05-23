@@ -91,7 +91,7 @@ const AppointmentWidget = ({ onClose }) => {
   const selectedDoctor = doctors.find(doc => doc.id === parseInt(formData.doctorId));
 
   return (
-    <div
+    <div 
       className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
       onClick={onClose}
     >
@@ -105,8 +105,8 @@ const AppointmentWidget = ({ onClose }) => {
         {/* Header */}
         <div className="flex justify-between items-center p-5 bg-gradient-to-r from-blue-600 to-blue-500 text-white">
           <h3 className="text-xl font-bold">Book Appointment</h3>
-          <button
-            onClick={onClose}
+          <button 
+            onClick={onClose} 
             className="text-white hover:text-blue-200 transition-colors"
           >
             <FaTimes size={20} />
@@ -197,8 +197,8 @@ const AppointmentWidget = ({ onClose }) => {
               <div className="space-y-5">
                 {selectedDoctor && (
                   <div className="flex items-center p-4 bg-blue-50 rounded-lg">
-                    <img
-                      src={selectedDoctor.photo}
+                    <img 
+                      src={selectedDoctor.photo} 
                       alt={selectedDoctor.name}
                       className="w-12 h-12 rounded-full object-cover mr-3 border-2 border-blue-200"
                     />
@@ -208,7 +208,7 @@ const AppointmentWidget = ({ onClose }) => {
                     </div>
                   </div>
                 )}
-
+                
                 <div>
                   <label className="block text-gray-700 mb-2 flex items-center">
                     <FaCalendarAlt className="mr-2 text-blue-500" />
@@ -234,8 +234,8 @@ const AppointmentWidget = ({ onClose }) => {
                           key={i}
                           type="button"
                           onClick={() => setFormData({ ...formData, time })}
-                          className={`p-3 border rounded-lg text-center transition-colors ${formData.time === time ?
-                            'bg-blue-100 border-blue-500 text-blue-700' :
+                          className={`p-3 border rounded-lg text-center transition-colors ${formData.time === time ? 
+                            'bg-blue-100 border-blue-500 text-blue-700' : 
                             'border-gray-300 hover:bg-gray-50'}`}
                         >
                           {time}

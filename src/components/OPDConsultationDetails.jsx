@@ -299,4 +299,4 @@ const OPDConsultationDetails = () => {
   );
 };
 
-export default OPDConsultationDetails;  
+export default OPDConsultationDetails;

@@ -31,7 +31,7 @@ const EmergencyCareDetails = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <Link 
-            to="/services" 
+            to="/KeyServices" 
             className="flex items-center text-blue-600 hover:text-blue-800 mb-8 transition-colors"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
