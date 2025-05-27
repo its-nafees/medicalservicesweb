@@ -48,8 +48,16 @@ export default function Login() {
     return true;
   };
 
-  const handleAdminLogin = () => navigate('/admin-dashboard');
-  const handlePatientLogin = () => navigate('/patient-dashboard');
+  const handleAdminLogin = () => {
+    // Store admin auth status in localStorage or context
+    localStorage.setItem('isAdmin', 'true');
+    navigate('/admin-dashboard'); // This should route to Appointments.jsx
+  };
+
+  const handlePatientLogin = () => {
+    localStorage.setItem('isPatient', 'true');
+    navigate('/patient-dashboard');
+  };
 
   const simulateAPICall = () => {
     return new Promise((resolve) => {
@@ -80,6 +88,13 @@ export default function Login() {
         await new Promise(resolve => setTimeout(resolve, 800));
         alert('Registration successful! Please login');
         setIsLogin(true);
+        setFormData({
+          name: '',
+          email: '',
+          password: '',
+          confirmPassword: '',
+          role: AUTH_CONFIG.PATIENT_DEFAULT_ROLE
+        });
         return;
       }
 
@@ -276,4 +291,4 @@ export default function Login() {
       </div>
     </div>
   );
-} 
+}
